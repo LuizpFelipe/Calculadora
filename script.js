@@ -1,4 +1,5 @@
 let valores = [];
+let menos = [];
 let operador = '';
 
 
@@ -8,19 +9,30 @@ function adicionarValor(valor) {
         inputResultado.value = '';
         operador = '';
     }
-    inputResultado.value += valor;
+    if (menos.length === 0) {
+        inputResultado.value += valor;
+    } else {
+        menos = []
+    }
 }
 
 function adicionarAcao(valor) {
     let inputResultado = document.getElementById('resultado');
     let texto = inputResultado.value;
-    if (operador !== '') {
+    if (operador !== '' && texto.length > 0) {
         calculoTotal();
     }
-    valores.push(texto.replace(',', '.'));
-
+    if (texto.length > 0 && menos.length < 1) {
+        valores.push(parseFloat(texto.replace(',', '.')));
+    }
+    if (valor === '-' && valores.length === 1 && texto.length > 0) {
+        menos.push(valor)
+    }
     inputResultado.value = '';
-    operador = valor;
+
+    if (valores.length > 0) {
+        operador = valor;
+    }
 }
 
 
@@ -36,9 +48,9 @@ function calculoTotal(valor) {
     for (let i = 1; i < valores.length; i++) {
         switch (operador) {
             case '-':
-                total = valores.reduce(function (total, numero) {
-                    return parseFloat(total) - parseFloat(numero);
-                })
+                for (let i = 1; i < valores.length; i++) {
+                    total -= valores[i];
+                }
                 valores = []
                 valores[total]
                 break;
@@ -65,7 +77,11 @@ function calculoTotal(valor) {
                 break;
         }
     }
-    inputResultado.value = total.toString().replace('.', ',');
+    if (Number.isNaN(total)) {
+        inputResultado.value = '';
+    } else {
+        inputResultado.value = total.toString().replace('.', ',');
+    }
     if (valor === '=') {
         valores = []
         operador = valor;

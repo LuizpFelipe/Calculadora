@@ -1,4 +1,11 @@
-let valor = '-5';
-let valor2 = '10';
+let valor = -5;
+let valor2 = -5;
+let valores = []
 
-console.log(parseFloat(valor) + parseFloat(valor2))
+valores.push(valor, valor2);
+let total = valores[0]; // Inicia o total com o primeiro valor do array
+
+for (let i = 1; i < valores.length; i++) {
+    total += valores[i]; // Subtrai cada número subsequente do total
+}
+console.log(total); // Deve retornar -10
