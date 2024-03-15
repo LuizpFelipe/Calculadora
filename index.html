@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="caixa">
+        <label class="titulo">Calculadora</label>
+        <div class="numeros">
+            <input type="text" name="resultado" id="resultado" readonly disabled>
+            <button class="botaoNumero" onclick="adicionarValor(1)">1</button>
+            <button class="botaoNumero" onclick="adicionarValor(2)">2</button>
+            <button class="botaoNumero" onclick="adicionarValor(3)">3</button>
+            <button class="botaoDeAcao" onclick="reset()">C</button>
+            <button class="botaoNumero" onclick="adicionarValor(4)">4</button>
+            <button class="botaoNumero" onclick="adicionarValor(5)">5</button>
+            <button class="botaoNumero" onclick="adicionarValor(6)">6</button>
+            <button class="botaoDeAcao" onclick="adicionarAcao('+')">+</button>
+            <button class="botaoNumero" onclick="adicionarValor(7)">7</button>
+            <button class="botaoNumero" onclick="adicionarValor(8)">8</button>
+            <button class="botaoNumero" onclick="adicionarValor(9)">9</button>
+            <button class="botaoDeAcao" onclick="adicionarAcao('-');adicionarValor('-')">-</button>
+            <button class="botaoNumero" onclick="adicionarValor(',')">,</button>
+            <button class="botaoNumero" onclick="adicionarValor(0)">0</button>
+            <button class="botaoDeAcao" onclick="adicionarAcao('/')">/</button>
+            <button class="botaoDeAcao" onclick="adicionarAcao('x')">x</button>
+
+            <button class="botaoDeAcao" onclick="calculoTotal('=')">=</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

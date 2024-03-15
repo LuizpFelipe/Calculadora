@@ -1,0 +1,49 @@
+.caixa {
+    width: 300px;
+    height: 400px;
+    background-color: gray;
+    border: 2px solid #2980b9;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    margin: 30px;
+    position: relative;
+    text-align: center;
+}
+
+.titulo {
+    font-size: 20px;
+
+}
+
+.numeros {
+    width: 280px;
+    height: 350px;
+    background-color: black;
+    border: 2px solid #2980b9;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input {
+    margin-top: 40px;
+    display: block;
+    width: 97%;
+    height: 30px;
+    pointer-events: none;
+    font-size: 30px;
+    text-align: right;
+}
+
+.botaoNumero,
+.botaoDeAcao {
+    width: 50px;
+    height: 40px;
+    margin: 7px;
+}
+
+.botaoNumero:hover,
+.botaoDeAcao:hover {
+    background-color: grey;
+}
